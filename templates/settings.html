@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block content %}
+
+<h2>Nastavení</h2>
+
+<div class="currency-form-container">
+    <form method="post" action="" class="currency-form">
+        <p class="currency-label">Vybraná měna:</p>
+        <select name="currency">
+            <option value="CZK" {{ 'selected' if selected_currency == 'CZK' }}>CZK</option>
+            <option value="EUR" {{ 'selected' if selected_currency == 'EUR' }}>EUR</option>
+            <option value="USD" {{ 'selected' if selected_currency == 'USD' }}>USD</option>
+        </select>
+        <input type="submit" value="Přepočítat">
+    </form>
+
+    <!-- Formulář pro změnu jména -->
+    <form method="post" action="/change_name" class="currency-form">
+        <p class="currency-label">Nové jméno:</p>
+        <input type="text" id="new_name" name="new_name" required>
+        <input type="submit" value="Změnit jméno">
+    </form>
+
+    <form method="post" action="/change_password" class="change-password">
+        <div>
+            <label for="old_password">Staré heslo:</label>
+            <input type="password" id="old_password" name="old_password" required>
+        </div>
+        <div>
+            <label for="new_password">Nové heslo:</label>
+            <input type="password2" id="new_password" name="new_password" required>
+            <input type="submit" value="Změnit heslo">
+        </div>
+    </form>
+</div>
+
+
+{% include 'errors.html' %}
+{% endblock %}

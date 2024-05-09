@@ -1,0 +1,124 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Rozpočet</h2>
+<div class="table-container">
+    <table id="tabulka">
+        <thead>
+            <th>Kategorie</th>
+            <th>Částka</th>
+            <th>Měsíc</th>
+            <th>Akce</th>
+        </thead>
+        {% for budget_item in budget_data %}
+        <tr>
+            <td>{{ budget_item[1] }}</td>
+            <td>{{ "{:,.2f}".format(budget_item[2]).replace(',', ' ') }} {{selected_currency}}</td>
+            <td>{{ budget_item[3] }}</td>
+            <td>
+                <div class="action-buttons">
+                    <form method="post" action="/budget">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="delete_id" value="{{ budget_item[0] }}">
+                        <button type="submit" class="delete-button">Smazat</button>
+                    </form>
+                    <button class="report-button" data-budget-id="{{ budget_item[0] }}">Výpis rozpočtu</button>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<div id="myModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="closeBtn">&times;</span>
+        <h2>Výpis rozpočtu</h2>
+        <div class="report-content" id="report-content"></div>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById("myModal");
+    var closeBtn = document.getElementById("closeBtn");
+    var reportContent = document.getElementById("report-content");
+
+    var buttons = document.querySelectorAll(".report-button");
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var budgetId = this.getAttribute("data-budget-id");
+            openModal();
+            loadBudgetReport(budgetId);
+        });
+    });
+
+    function openModal() {
+        modal.style.display = "block";
+    }
+
+    function closeModal() {
+        modal.style.display = "none";
+        reportContent.innerHTML = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    };
+
+    function loadBudgetReport(budgetId) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "/budget_report/" + budgetId, true);
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    reportContent.innerHTML = xhr.responseText;
+                }
+            }
+        };
+        xhr.send();
+    }
+</script>
+
+
+<br>
+<h2>Přidat novou položku rozpočtu</h2>
+<form method="post" class="form-container">
+    <label for="kategorie" class="form-label">Kategorie:</label>
+    <select id="kategorie" name="kategorie" class="form-input" required>
+        <option value="Auto">Auto</option>
+        <option value="Bydlení">Bydlení</option>
+        <option value="Cestování">Cestování</option>
+        <option value="Finance">Finance</option>
+        <option value="Oblečení a obuv">Oblečení a obuv</option>
+        <option value="Online nákupy">Online nákupy</option>
+        <option value="Potraviny">Potraviny</option>
+        <option value="Restaurace">Restaurace</option>
+        <option value="Rodina">Rodina</option>
+        <option value="Volný čas">Volný čas</option>
+        <option value="Nazařazeno">Nazařazeno</option>
+    </select>
+    <label for="částka" class="form-label">Částka:</label>
+    <input type="number" id="částka" name="částka" class="form-input" min="0.01" max="1000000000000" step="any" required><br>
+    <label for="měsíc" class="form-label">Měsíc:</label>
+    <select id="měsíc" name="měsíc" class="form-input" required>
+        <option value="Leden">Leden</option>
+        <option value="Únor">Únor</option>
+        <option value="Březen">Březen</option>
+        <option value="Duben">Duben</option>
+        <option value="Květen">Květen</option>
+        <option value="Červen">Červen</option>
+        <option value="Červenec">Červenec</option>
+        <option value="Srpen">Srpen</option>
+        <option value="Září">Září</option>
+        <option value="Říjen">Říjen</option>
+        <option value="Listopad">Listopad</option>
+        <option value="Prosinec">Prosinec</option>
+    </select>
+    {% include 'errors.html' %}
+    <button type="submit" class="form-button ">Přidat položku</button>
+</form>
+{% endblock %}

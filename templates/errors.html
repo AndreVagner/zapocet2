@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Chybové zprávy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-pc.css') }}">
+</head>
+<body>
+    <div class="flash-messages">
+        {% with errors = get_flashed_messages(category_filter=["error"]) %}
+            {% if errors %}
+                {% for message in errors %}
+                    <div class="flash-message-e error">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        {% with messages = get_flashed_messages(category_filter=["info"]) %}
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="flash-message-i info">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
+    <script>
+        setTimeout(() => document.querySelector('.flash-messages').style.display = 'none', 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,1097 @@
+@media only screen and (min-width: 1000px) { /*-----------------------------------------------------------------------PC------------------------------------------------------------------------------------------------*/
+    /* Resetování výchozích stylů pro větší konzistenci */
+    body, h1, h2, h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+    h2{
+        text-align: center;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background-color: #2c2c2c; /* Tmavá pozadí */
+        color: #e0e0e0; /* Světlý text */
+    }
+
+    .containerMain {
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .sidenav {
+        width: 280px; /* Set the width of the sidebar */
+        position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+        z-index: 1; /* Stay on top */
+        top: 0; /* Stay at the top */
+        left: 0;
+        overflow-x: hidden; /* Disable horizontal scroll */
+      }
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background: linear-gradient(170deg, rgba(49, 57, 73, 0.8) 20%, rgba(49, 57, 73, 0.5) 20%, rgba(49, 57, 73, 0.5) 35%, rgba(41, 48, 61, 0.6) 35%, rgba(41, 48, 61, 0.8) 45%, rgba(31, 36, 46, 0.5) 45%, rgba(31, 36, 46, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(20, 24, 31, 0.8) 0%, rgba(41, 48, 61, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949;
+    }
+
+    .container2 h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    /* Odstraníme margin pro label a input */
+    .container2 label,
+    .container2 input[type="text"],
+    .container2 input[type="email"],
+    .container2 input[type="password"] {
+        margin: 0;
+        padding: 10px;
+        width: 80%;
+        max-width: 200px;
+    }
+
+    .container2 input[type="text"],
+    .container2 input[type="email"],
+    .container2 input[type="password"] {
+        border: 1px solid #ccc; /* Přidáme lehký rámec */
+        border-radius: 5px; /* Zakulacené rohy */
+        background-color: #f2f2f2; /* Světlejší pozadí */
+        color: #333; /* Barva textu */
+        background-color: #1f1f1f; /* Tmavá pozadí */
+        color: #e0e0e0;
+        margin-bottom: -25px;
+    }
+
+    .container2 input[type="submit"]:hover {
+        background-color: #357cbf;
+    }
+
+    .container2 p {
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+
+    .container2 a {
+        color: #4a90e2;
+        text-decoration: none;
+    }
+
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+    .content {
+        margin-left: 280px; /* Same as the width of the sidebar */
+        padding: 0px 10px;
+    }
+
+    .table-container {
+        max-width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        width: 100%;
+    }
+
+    table th, table td {
+        border: 1px solid #ccc; /* Lehký šedý rámeček */
+        padding: 12px;
+        text-align: left;
+    }
+
+    .table-header {
+        background-color: #444;
+        color: white;
+    }
+
+    .form-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-label {
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #444;
+        color: white;
+    }
+
+    .form-button {
+        background-color: #2980b9; /* Modrá */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+        align-self: flex-end; /* Zarovnání doprava */
+    }
+
+    .form-button:hover {
+        background-color: #3498db; /* Jasné modrá při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(52, 152, 219, 1); /* Efekt svícení při najetí myší */
+    }
+
+    #myChart {
+        width: 100%;
+        max-width: 420px;
+        margin: auto;
+        display: block;
+        height: 468px;
+    }
+
+    #mySecondChart {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .balances {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cell {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+        flex: 1;
+        margin: 0 5px;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .flash-messages {
+        margin-bottom: 20px;
+    }
+
+    .flash-message-e {
+        padding: 10px;
+        background-color: #ffcccc;
+        color: #d60000;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    .flash-message-i {
+        padding: 10px;
+        background-color: #4a71ee;
+        color: #ffffff;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    /* Styl pro modální dialog */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #1d1b1b;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        text-align: center;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .delete-button {
+        background-color: #c0392b; /* Tmavě červená */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+    }
+
+    .delete-button:hover {
+        background-color: #e74c3c; /* Světlejší červená při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(231, 76, 60, 1); /* Efekt svícení při najetí myší */
+    }
+
+    .report-button {
+        background-color: #27ae60; /* Zelená */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px; /* Přidáme mezeru mezi tlačítky */
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+    }
+
+    .report-button:hover {
+        background-color: #2ecc71; /* Jasnější zelená při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(46, 204, 113, 1); /* Efekt svícení při najetí myší */
+    }
+
+    .report-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Tabulka */
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .budget-summary {
+        flex: 1;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .budget-progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #4caf50;
+        position: relative;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .budget-progress {
+        height: 100%;
+        width: 0;
+        background-color: #c0392b;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 1s ease;
+    }
+
+    /* Styl pro tlačítko pro přihlášení */
+    .login-button {
+        background-color: transparent;
+        border: 2px solid #5a7df0; /* Oranžový rámec */
+        color: #5a7df0;
+        border-radius: 0.6em;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1.2em 2.8em;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px; /* Odstup od spodního okraje */
+    }
+
+    .login-button:hover {
+        background-color: #4a71ee; /* Oranžová při najetí myší */
+        color: #fff; /* Bílý text při najetí myší */
+        box-shadow: 0px 0px 10px 0px #4a71ee; /* Efekt svícení při najetí myší */
+    }
+
+    /* Styl pro tlačítko pro odhlášení */
+    .logout-button {
+        background-color: transparent;
+        border: 2px solid #5a7df0;
+        color: #5a7df0;
+        border-radius: 0.6em;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1em 2.5em;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px; /* Odstup od spodního okraje */
+    }
+
+    .logout-button:hover {
+        background-color: #4a71ee; /* Tmavě červená při najetí myší */
+        color: #fff; /* Bílý text při najetí myší */
+        box-shadow: 0px 0px 10px 0px #4a71ee; /* Efekt svícení při najetí myší */
+    }
+
+    /* Zarovnání na pravou stranu */
+    .pravo-user {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px; /* Mezera mezi tlačítky */
+    }
+    .levo-user {
+        display: flex;
+        gap: 10px; /* Mezera mezi tlačítky */
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: space-between; /* Roztáhne kontejnery na stejnou úroveň */
+        align-items: center; /* Zarovná obsah do středu vertikálně */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 10px; /* Odstup od spodního okraje */
+    }
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a:focus {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .currency-form {
+        color: #fff;
+        border: none;
+        padding: 10px;
+        max-width: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center; /* Zarovnání prvků ve vertikálním směru */
+        gap: 10px; /* Rozestup mezi prvkami */
+        margin: 0; /* Odebrání defaultního marginu */
+    }
+
+    .currency-form select {
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #666;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 10px;
+    }
+
+    .currency-form input[type="submit"] {
+        color: #fff;
+        background-color: #5a7df0;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .currency-form input[type="submit"]:hover {
+        background-color: #4a71ee;
+    }
+
+    .currency-form-container input[type="password"] {
+        margin-left: 5px;
+    }
+
+    .currency-form-container {
+        display: block;
+        align-items: center; /* Zarovnání prvků ve vertikálním směru */
+        gap: 10px; /* Rozestup mezi prvkami */
+        margin-bottom: 20px; /* Odstup od dalšího obsahu */
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 10px;
+        max-width: 35%;
+    }
+
+    .currency-label {
+        color: #fff; /* Bílá barva textu */
+        text-wrap: nowrap;
+    }
+
+    .change-password {
+        padding: 5px 15px;
+    }
+
+    .change-password input[type="submit"] {
+        color: #fff;
+        background-color: #5a7df0;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
+    .change-password input[type="submit"]:hover {
+        background-color: #4a71ee;
+    }
+
+    .change-password input[type="password2"] {
+        margin-left: 6px;
+    }
+
+
+}
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+@media only screen and (max-width: 999px) { /*----------------------------------------------------------------------------MOBIL-------------------------------------------------------------------------------------------*/
+    /* Resetování výchozích stylů pro větší konzistenci */
+    body, h1, h2, h3, p, ul, li {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', sans-serif;
+        background-color: #2c2c2c;
+        color: #e0e0e0;
+        margin: 0;
+    }
+
+    .content {
+        padding: 20px 0;
+        font-size: 2em;
+        flex-grow: 1;
+        height: 100vh;
+    }
+
+    .container {
+        max-width: 960px;
+        margin: auto; /* Zajistí umístění kontejneru na střed stránky */
+        padding: 20px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+    }
+
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    .container2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        background: linear-gradient(170deg, rgba(49, 57, 73, 0.8) 20%, rgba(49, 57, 73, 0.5) 20%, rgba(49, 57, 73, 0.5) 35%, rgba(41, 48, 61, 0.6) 35%, rgba(41, 48, 61, 0.8) 45%, rgba(31, 36, 46, 0.5) 45%, rgba(31, 36, 46, 0.8) 75%, rgba(49, 57, 73, 0.5) 75%), linear-gradient(45deg, rgba(20, 24, 31, 0.8) 0%, rgba(41, 48, 61, 0.8) 50%, rgba(82, 95, 122, 0.8) 50%, rgba(133, 146, 173, 0.8) 100%) #313949;
+    }
+
+    .container2 flash-messages {
+        font-size: 5em;
+    }
+
+    .container2 h1 {
+        font-size: 5em;
+        margin-bottom: 100px;
+    }
+
+    .container2 input[type="text"],
+    .container2 input[type="email"],
+    .container2 input[type="password"] {
+        margin: 0;
+        padding: 10px;
+        width: 80%;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        color: #333;
+        background-color: #1f1f1f;
+        color: #e0e0e0;
+        font-size: 2em;
+    }
+
+    .container2 label,
+    .container2 input[type="text"],
+    .container2 input[type="email"],
+    .container2 input[type="password"] {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    .container2 input[type="submit"]:hover {
+        background-color: #357cbf;
+    }
+
+    .container2 p {
+        font-size: 2em;
+        margin-top: 20px;
+    }
+
+    .container2 a {
+        margin-top: 20px;
+        color: #4a90e2;
+        text-decoration: none;
+        font-size: 2em;
+    }
+
+    /*------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    .header {
+        background-color: #333;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 40px; /*Možná top*/
+        font-size: 25px;
+    }
+
+    .navbar {
+        background-color: #3a3939;
+        padding: 10px 0;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        margin: 10;
+        padding: 0;
+        width: 100%; /* Roztáhne se přes celou šířku pruhu */
+    }
+
+    .nav-item {
+        font-size: 25px;
+        font-weight: bold;
+        width: 25%; /* Rovnoměrně rozdělí šířku na 4 části (počet odkazů) */
+        text-align: center; /* Vystředí text v každém odkazu */
+        position: relative;
+    }
+
+    .nav-link {
+        color: #ecf0f1;
+        text-decoration: none;
+        padding: 15px 0; /* Změněno na 15px 0, aby text byl roztáhnutý přes celou výšku pruhu */
+        transition: color 0.3s;
+        display: block; /* Udělá odkaz blokovým prvkem, aby zabral celou šířku svého rodiče */
+        font-size: 1.5em;
+    }
+
+    .nav-link:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -2px;
+        left: 0;
+        background-color: #3498db;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-item:hover .nav-link {
+        color: #3498db;
+    }
+
+    .nav-item:hover .nav-link:before {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .nav-list {
+        list-style: none;
+        display: flex;
+        margin: 10;
+        padding: 0;
+        width: 100%; /* Roztáhne se přes celou šířku pruhu */
+    }
+
+    .balances {
+        display: flex;
+        flex-direction: column; /* Prvky pod sebou místo vedle sebe */
+    }
+
+    .balances .cell {
+        flex: 0 0 48%; /* Každý prvek zabere přibližně půlku šířky kontejneru */
+        margin-bottom: 10px; /* Přidáme okraj pro oddělení prvků */
+        /*Upravit to, jak je ten okraj buněk*/
+        border-radius: 20px;
+    }
+
+    .table-container {
+        max-width: 100%;
+        overflow-x: auto;
+        margin-top: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    table th, table td {
+        border: 1px solid #ccc; /* Lehký šedý rámeček */
+        padding: 12px;
+        text-align: left;
+    }
+
+    .table-header {
+        background-color: #444;
+        color: white;
+    }
+
+    .form-container {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+        background-color: #333;
+        border-radius: 4px;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        font-size: 1.3em;
+    }
+
+    .form-label {
+        color: white;
+        margin-bottom: 8px;
+    }
+
+    .form-input {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #444;
+        color: white;
+        font-size: 1em;
+    }
+
+    .form-button {
+        background-color: #2980b9; /* Modrá */
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+        align-self: flex-end; /* Zarovnání doprava */
+        font-size: 0.8em;
+    }
+
+    .form-button:hover {
+        background-color: #3498db; /* Jasné modrá při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(52, 152, 219, 1); /* Efekt svícení při najetí myší */
+    }
+
+    .chart-container {
+        /* Přidání paddingu a nastavení minimální výšky */
+        padding-top: 40px;
+        min-height: 20em; /* nebo vhodnou výšku dle vašich potřeb */
+    }
+
+    #myChart {
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        display: block;
+        height: 600px;
+    }
+
+    .chart-scrollable {
+        overflow-x: auto; /* Povolí scrollování vodorovně */
+    }
+
+
+    #mySecondChart {
+        width: 100%;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .balances {
+        display: flex;
+        justify-content: center; /* Místo space-between použijeme center pro středové zarovnání */
+        flex-wrap: wrap; /* Povolíme zalomení obsahu, pokud není dostatek prostoru */
+        gap: 10px; /* Přidáme mezery mezi prvky */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .cell {
+        border: 2px solid #ccc; /* Zvýrazníme border */
+        border-radius: 10px;
+        padding: 20px; /* Zvětšíme padding */
+        text-align: center;
+        flex: 0 0 calc(33.333% - 10px); /* Nastavíme flex-basis na třetinu prostoru a odečteme gap */
+        margin: 5px; /* Malá mezera mezi prvky */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Přidáme stín pro lepší vizuální oddělení */
+        background: linear-gradient(
+            to right,
+            #2b7eb6 0%,
+            #2b7eb6 var(--income-ratio),
+            #e74c3c var(--income-ratio),
+            #e74c3c var(--expense-ratio)
+        );
+        color: #fff; /* Pro zlepšení čitelnosti bílý text */
+        position: relative; /* Pro umožnění absolutního pozicování dětských prvků */
+        padding-top: 10px; /* Pro vytvoření prostoru na horní straně */
+        padding-bottom: 30px; /* Pro vytvoření prostoru na spodní straně */
+        overflow: hidden; /* Pro udržení rohů .cell zaoblených, pokud máte border-radius */
+        flex: 1 1 auto;
+    }
+
+    .flex-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+
+    .flash-messages {
+        margin-bottom: 20px;
+    }
+
+    .flash-message-e {
+        padding: 10px;
+        background-color: #ffcccc;
+        color: #d60000;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 2em;
+    }
+
+    .flash-message-i {
+        padding: 10px;
+        background-color: #4a71ee;
+        color: #ffffff;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 1.5em;
+    }
+
+    /* Styl pro modální dialog */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    .modal-content {
+        background-color: #1d1b1b;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        text-align: center;
+        width: 80%;
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+    }
+
+    .delete-button {
+        background-color: #c0392b; /* Tmavě červená */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+        font-size: 1em;
+    }
+
+    .delete-button:hover {
+        background-color: #e74c3c; /* Světlejší červená při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(231, 76, 60, 1); /* Efekt svícení při najetí myší */
+    }
+
+    .report-button {
+        background-color: #27ae60; /* Zelená */
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 10px; /* Přidáme mezeru mezi tlačítky */
+        transition: background-color 0.3s, box-shadow 0.3s; /* Přidáno box-shadow pro efekt svícení */
+        font-size: 1em;
+    }
+
+    .report-button:hover {
+        background-color: #2ecc71; /* Jasnější zelená při najetí myší */
+        box-shadow: 0px 0px 10px 0px rgba(46, 204, 113, 1); /* Efekt svícení při najetí myší */
+    }
+
+    .report-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Tabulka */
+    .report-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .budget-summary {
+        flex: 1;
+        margin-left: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .budget-progress-bar {
+        width: 100%;
+        height: 10px;
+        background-color: #4caf50;
+        position: relative;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    .budget-progress {
+        height: 100%;
+        width: 0;
+        background-color: #c0392b;
+        border-radius: 5px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: width 1s ease;
+    }
+
+    /* Styl pro tlačítko pro přihlášení */
+    .login-button {
+        background-color: transparent;
+        border: 2px solid #5a7df0; /* Oranžový rámec */
+        color: #5a7df0;
+        margin: 20px;
+        border-radius: 0.6em;
+        font-size: 2em;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1.2em 2.8em;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px; /* Odstup od spodního okraje */
+    }
+
+    .login-button:hover {
+        background-color: #4a71ee; /* Oranžová při najetí myší */
+        color: #fff; /* Bílý text při najetí myší */
+        box-shadow: 0px 0px 10px 0px #4a71ee; /* Efekt svícení při najetí myší */
+    }
+
+    /* Styl pro tlačítko pro odhlášení */
+    .logout-button {
+        background-color: transparent;
+        border: 2px solid #5a7df0; /* Tmavě červený rámec */
+        color: #5a7df0;
+        border-radius: 0.6em;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        padding: 1em 2.5em;
+        cursor: pointer;
+        transition: color 0.3s, background-color 0.3s, box-shadow 0.3s;
+        text-decoration: none;
+        font-family: 'Montserrat', sans-serif;
+        margin-bottom: 10px; /* Odstup od spodního okraje */
+    }
+
+    .logout-button:hover {
+        background-color: #4a71ee; /* Tmavě červená při najetí myší */
+        color: #fff; /* Bílý text při najetí myší */
+        box-shadow: 0px 0px 10px 0px #4a71ee; /* Efekt svícení při najetí myší */
+    }
+
+    /* Zarovnání na pravou stranu */
+    .pravo-user {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px; /* Mezera mezi tlačítky */
+    }
+    .levo-user {
+        display: flex;
+        gap: 10px; /* Mezera mezi tlačítky */
+
+    }
+
+    .user-info {
+        display: flex;
+        justify-content: space-between; /* Roztáhne kontejnery na stejnou úroveň */
+        align-items: center; /* Zarovná obsah do středu vertikálně */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 100px; /* Odstup od spodního okraje */
+    }
+
+    /*-----------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+    .topnav {
+        background-color: #333;
+        overflow: hidden;
+    }
+
+    .topnav a {
+        float: left;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 20px 30px;
+        text-decoration: none;
+        font-size: 1.3em;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a:focus {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    .currency-form {
+        color: #fff;
+        border: none;
+        padding: 10px;
+        max-width: 200px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center; /* Zarovnání prvků ve vertikálním směru */
+        gap: 10px; /* Rozestup mezi prvkami */
+        margin: 0; /* Odebrání defaultního marginu */
+        font-size: 1em;
+    }
+
+    .currency-form select {
+        color: #333;
+        background-color: #fff;
+        border: 1px solid #666;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 10px;
+        font-size: 1.2em;
+    }
+
+    .currency-form input[type="submit"] {
+        color: #fff;
+        background-color: #5a7df0;
+        border: none;
+        padding: 5px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.2em;
+    }
+
+    .currency-form input[type="submit"]:hover {
+        background-color: #4a71ee;
+    }
+
+    .currency-form-container {
+        display: flex;
+        align-items: center; /* Zarovnání prvků ve vertikálním směru */
+        gap: 10px; /* Rozestup mezi prvkami */
+        margin-bottom: 20px; /* Odstup od dalšího obsahu */
+        background-color: #333;
+        padding: 5px;
+        border-radius: 5px;
+        margin-right: 10px;
+        max-width: 100%;
+        font-size: 1.4em;
+    }
+
+    .currency-label {
+        margin: 0;
+        color: #fff;
+    }
+}

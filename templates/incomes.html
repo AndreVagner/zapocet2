@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Příjmy</h2>
+<div class="table-container">
+    <table id="tabulka">
+        <thead>
+            <th>Popis</th>
+            <th>Částka</th>
+            <th>Datum</th>
+            <th>Akce</th>
+        </thead>
+        {% for income in incomes %}
+        <tr>
+            <td style="max-width: 100px; word-wrap: break-word;">{{ income[1] }}</td>
+            <td>{{ "{:,.2f}".format(income[2]).replace(',', ' ') }} {{selected_currency}}</td>
+            <td>{{ income[3] }}</td>
+            <td>
+                <div class="action-buttons">
+                    <form method="post" action="/incomes">
+                        <input type="hidden" name="_method" value="DELETE">
+                        <input type="hidden" name="delete_id" value="{{ income[0] }}">
+                        <button type="submit" class="delete-button">Smazat</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+<h2>Přidat nový příjem</h2>
+<form method="post" class="form-container">
+    <label for="popis" class="form-label">Popis:</label>
+    <input type="text" id="popis" name="popis" class="form-input" required><br>
+    <label for="částka" class="form-label">Částka:</label>
+    <input type="number" id="částka" name="částka" class="form-input" min="0.01" max="1000000000000" step="any" required><br>
+    <label for="datum" class="form-label">Datum:</label>
+    <input type="date" id="datum" name="datum" class="form-input" required><br>
+    {% include 'errors.html' %}
+    <button type="submit" class="form-button">Přidat příjem</button>
+</form>
+
+{% endblock %}

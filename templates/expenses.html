@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<h2>Výdaje</h2>
+<div class="table-container">
+    <table id="tabulka">
+        <thead>
+            <th>Kategorie</th>
+            <th>Popis</th>
+            <th>Částka</th>
+            <th>Datum</th>
+            <th>Akce</th>
+        </thead>
+        {% for expense in expenses %}
+        <tr>
+            <td>{{ expense[1] }}</td>
+            <td style="max-width: 100px; word-wrap: break-word;">{{ expense[2] }}</td>
+            <td>{{ "{:,.2f}".format(expense[3]).replace(',', ' ') }} {{selected_currency}}</td>
+            <td>{{ expense[4] }}</td>
+            <td>
+                <form method="post" action="/expenses">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="delete_id" value="{{ expense[0] }}">
+                    <button type="submit" class="delete-button">Smazat</button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+<br>
+<h2>Přidat nový výdaj</h2>
+<form method="post" class="form-container">
+    <form method="post" class="form-container">
+        <label for="kategorie" class="form-label">Kategorie:</label>
+        <select id="kategorie" name="kategorie" class="form-input" required>
+            <option value="Auto">Auto</option>
+            <option value="Bydlení">Bydlení</option>
+            <option value="Cestování">Cestování</option>
+            <option value="Finance">Finance</option>
+            <option value="Oblečení a obuv">Oblečení a obuv</option>
+            <option value="Online nákupy">Online nákupy</option>
+            <option value="Potraviny">Potraviny</option>
+            <option value="Restaurace">Restaurace</option>
+            <option value="Rodina">Rodina</option>
+            <option value="Volný čas">Volný čas</option>
+            <option value="Nazařazeno">Nazařazeno</option>
+        </select>
+    <label for="popis" class="form-label">Popis:</label>
+    <input type="text" id="popis" name="popis" class="form-input" required><br>
+    <label for="částka" class="form-label">Částka:</label>
+    <input type="number" id="částka" name="částka" class="form-input" min="0.01" max="1000000000000" step="any" required><br>
+    <label for="datum" class="form-label">Datum:</label>
+    <input type="date" id="datum" name="datum" class="form-input" required><br>
+    {% include 'errors.html' %}
+    <button type="submit" class="form-button">Přidat výdaj</button>
+</form>
+
+{% endblock %}

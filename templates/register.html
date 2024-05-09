@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-pc.css') }}">
+</head>
+<body>
+    <div class="container2">
+        <h1>Registrace</h1>
+            <form method="POST" action="/register">
+                <label for="jmeno">Jméno:</label>
+                <input type="text" id="jmeno" name="jmeno" require d><br><br>
+
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="heslo">Heslo:</label>
+                <input type="password" id="heslo" name="heslo" required><br><br>
+
+                <input type="submit" value="Registrovat" class="login-button">
+            </form>
+            <a href="/login">Zpět na přihlášení</a>
+            {% include 'errors.html' %}
+    </div>
+
+</body>
+</html>

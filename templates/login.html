@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Přihlášení</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles-pc.css') }}">
+
+</head>
+<body>
+    <div class="container2">
+        <h1>Přihlášení</h1>
+        <form method="POST" action="/login">
+            <label for="jmeno">Jméno:</label>
+            <input type="text" id="jmeno" name="jmeno" required><br><br>
+            <label for="heslo">Heslo:</label>
+            <input type="password" id="heslo" name="heslo" required><br><br>
+            <input type="checkbox" id="rememberMe" name="rememberMe"> <label for="rememberMe">Zapamatuj si mě </label><br><br>
+            <input type="submit" value="Přihlásit se" class="login-button">
+        </form>
+        <p>Nemáte ještě účet? </p> <a href="/register"> Zaregistrujte se!</a>
+        {% include 'errors.html' %}
+    </div>
+
+</body>
+</html>
